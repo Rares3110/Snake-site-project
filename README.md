@@ -2,12 +2,12 @@
 
 ## Start
 
-'''node.js
+'''js
 npm run start
 '''
 
 ## Alternativa
 
-'''node.js
+'''js
 node index
 '''
