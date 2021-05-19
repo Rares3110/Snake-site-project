@@ -1,0 +1,373 @@
+:root
+{
+    --bdgColor: hsl(249, 74%, 33%);
+    --bdgColor-h: 249;
+    --bdgColor-s: 74%;
+    --bdgColor-l: 33%;
+    --textColor: hsl(67, 35%, 80%);
+    color: var(--textColor);
+}
+
+body 
+{
+    margin : 0px;
+    background-color: var(--bdgColor);
+}
+
+#main-content
+{
+    position: absolute;
+    display: flex;
+    box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    width: 80%;
+    height: 2600px;
+    margin: 7vh 10% 0% 10%;
+    background-color: hsl(var(--bdgColor-h), var(--bdgColor-s), 
+    calc(var(--bdgColor-l) - 5%));
+}
+
+#nav-bar
+{
+    position: fixed;
+    display: grid;
+    grid-template-columns: 7.1vh 1fr 7.1vh;
+    box-shadow: 0px 10px 20px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 7vh;
+    background-color: hsl(var(--bdgColor-h), var(--bdgColor-s), 
+    calc(var(--bdgColor-l) - 13%));
+    z-index: 10;
+}
+
+#navMenu
+{
+    height: 7vh;
+    width: 7vh;
+    grid-column: 1;
+    border-style: hidden;
+    background-color: hsl(var(--bdgColor-h), var(--bdgColor-s), 
+    calc(var(--bdgColor-l) - 13%));
+    overflow: hidden;
+}
+#navMenu:hover
+{
+    background-color: hsl(var(--bdgColor-h), var(--bdgColor-s), 
+    calc(var(--bdgColor-l) - 10%));
+}
+#navMenu:active
+{
+    filter: brightness(120%);
+}
+
+#navMenuIcon
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#frontText
+{
+    position: absolute;
+    grid-area: 1/2/1/2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
+}
+
+#title
+{
+    grid-column: 2;
+    text-align: center;
+    margin: 0px;
+    align-self: center;
+    margin-bottom: 0.4vh;
+    font-size: 5vh;
+}
+
+#userName
+{
+    grid-column: 3;
+    text-align: right;
+    padding-right: 10px;
+    margin: 0px;
+    align-self: center;
+    margin-bottom: 1.5vh;
+    font-size: 4vh;
+}
+
+#userName:hover
+{
+    filter: brightness(120%);
+}
+
+#logoutButton
+{
+    grid-column: 3;
+    text-align: right;
+    border-style: hidden;
+    justify-self: end;
+    margin-top: -1.6vh;
+    height: 2vh;
+    font-size: 1.5vh;
+    color: var(--textColor);
+    background-color: transparent;
+}
+
+#logoutButton:hover
+{
+    filter: brightness(120%);
+}
+
+#userIcon
+{
+    border-radius: 100%;
+    border: 2px solid hsl(12, 76%, 37%);
+    height: 6vh;
+    width: 90%;
+    margin-top: 5%;
+    margin-right: 15%;
+    grid-column: 3;
+}
+
+#userIcon:hover
+{
+    filter: brightness(120%);
+}
+
+#userIcon:active
+{
+    filter: brightness(140%);
+}
+
+.sidenav 
+{
+    height: auto;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(201, 93, 22);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+  
+.sidenav a 
+{
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--textColor);
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover 
+{
+    color: #edfeff;
+    background-color: rgba(255, 255, 255, 0.356);
+}
+
+#leaderboardTable
+{
+    display: flexbox;
+    margin-top: 100px;
+    align-self: center;
+    width: 60%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.486);
+}
+
+#leaderboardGrid
+{
+    align-self: center;
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr;
+    width: 60vmin;
+}
+
+#leaderboardTable
+{
+    width: 100%;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.205);
+}
+
+#leaderboardTable h1
+{
+    text-align: center;
+}
+#leaderboardTable div
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 0px 10px 0px;
+}
+
+#leaderboardTable name
+{
+    padding-left: 20%;
+    font-size: 21px;
+}
+
+#leaderboardTable score
+{
+    text-align: end;
+    padding-right: 20%;
+    font-size: 21px;
+}
+
+#myRecord
+{
+    display: flexbox;
+    align-self: center;
+    justify-self: center;
+    margin-left: 10%;
+    height: 80px;
+}
+
+#myRecord h2
+{
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+}
+
+#myRecord p 
+{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+    margin: 0;
+    padding-top:6px;
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.486);
+}
+
+#info
+{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#info p
+{
+    font-size: 24px;
+}
+
+#rulesTitle 
+{
+    margin-left: 10%;
+}
+
+.line
+{
+    border: 3px solid hsl(var(--bdgColor-h), var(--bdgColor-s), 
+    calc(var(--bdgColor-l) - 13%));
+    width: 80%;
+    align-self: center;
+    margin-top: -20px;
+}
+
+#firstRule
+{
+    text-align: center;
+    font-size: 44px;
+    font-weight: bold;
+    width: 50%;
+    margin: 0% 25% 0% 25%;
+    background-color: hsl(12, 76%, 37%);
+}
+
+#secondRule
+{
+    display: grid;
+    width: 100%;
+    justify-self: center;
+    grid-auto-columns: 1fr 1fr;
+}
+
+#secondRule img
+{
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    justify-self: center;
+    box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.199);
+}
+
+#secondRule img:nth-child(1)
+{
+    grid-column: 1;
+    margin-left: 30%;
+}
+
+#secondRule img:nth-child(2)
+{
+    grid-column: 2;
+    margin-right: 30%;
+}
+
+#thirdRule
+{
+    display: grid;
+    width: 40vw;
+    align-self: center;
+    grid-auto-columns: 6vw 6vw 6vw;
+    margin-left: 24vw;
+}
+
+.triangle
+{
+    width: 0px; 
+    height: 0px; 
+    border-top: 3vw solid transparent;
+    border-bottom: 3vw solid transparent;
+    border-left: 5vw solid rgb(187, 14, 14);
+}
+
+@media (max-width: 768px)
+{
+    #title
+    {
+        visibility: hidden;
+    }
+
+    #leaderboardGrid
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    #myRecord
+    {
+        margin: 0%;
+    }
+}
+
+@media (min-width: 1280px)
+{
+    #rulesTitle 
+    {
+        margin-left: 20%;
+    }
+
+    .line
+    {
+        width: 60%;
+    }
+
+    #thirdRule
+    {
+        margin-left: 16vw;
+    }
+
+    #info
+    {
+        width: 60%;
+        align-self: center;
+    }
+}

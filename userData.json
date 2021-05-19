@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "name": "Rares3110",
+      "password": "mergeBine",
+      "score": 150
+    },
+    {
+      "name": "Robys",
+      "password": "abcd",
+      "score": 149
+    },
+    {
+      "name": "BestOfAll",
+      "password": "aabba",
+      "score": 11
+    },
+    {
+      "name": "ProSnake",
+      "password": "goProBro",
+      "score": 0
+    },
+    {
+      "name": "Master_Viper",
+      "password": "forRome12",
+      "score": 0
+    },
+    {
+      "name": "DealWithIt23",
+      "password": "nopassword",
+      "score": 0
+    }
+  ]
+}

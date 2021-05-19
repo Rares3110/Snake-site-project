@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title>SuperSnake</title>
+        <link rel="stylesheet" href="css/mainPageStyles.css"/>
+        <link rel="stylesheet" href="css/snakeStyles.css"/>
+        <link rel="stylesheet" href="css/loginStyles.css"/>
+        <script src="js/snake.js"></script>
+        <script src="js/mainPage.js"></script>
+    </head>
+
+    <div id="loginBox">
+        <form id="loginForm" method="POST" action="http://localhost:5000/pathLogged">
+            <button class="closeForm" onclick="openLogin()">X</button>
+            <div id="registerButton">
+                <p>NEW ACCOUNT </p>
+                <label class="switch">
+                    <input type="checkbox" name="isRegister" onclick="showRegister()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <p>USERNAME</p>
+            <input id="loginUserName" type="text" name="userName">
+            <p>PASSWORD</p>
+            <input id="loginPass" type="password" name="pass1">
+            <p id="hydeOnLogin1">REPEAT PASSWORD</p>
+            <input id="hydeOnLogin2" type="password" name="pass2">
+            <button id="loginButton">LOGIN</button>
+        </form>
+    </div>
+
+    <body>
+        <div id="nav-bar">
+            <button id="navMenu" onclick="openNav()">
+                <img id="navMenuIcon" src="images/menuIcon.jpg" alt="menu icon">
+            </button>
+            <div id="frontText">
+                <h1 id="title">SuperSnake</h1>
+                <h1 id="userName" onclick="openLogin()"><%=dataToUse.userName%></h1>
+                <button id="logoutButton" onclick="goGuest()">Logout</button>
+            </div>
+            <img id="userIcon" src="<%=dataToUse.image%>" class="fitIcon" alt="user icon" onclick="openLogin()">
+        </div>
+
+        <div id="navMenuContent" class = "sidenav">
+            <a href="#jumpToGame">Game</a>
+            <a href="#jumpToLeaderboard">Leaderboard</a>
+            <a href="#jumpInfo">Rules</a>
+        </div>
+
+        <div id="main-content">
+            <form id="backToGuest" method="POST" action="http://localhost:5000/pathGuest"></form>
+            <form id="updateScor" method="POST" action="http://localhost:5000/pathLoggedUpdate">
+                <input type="text" style="visibility: collapse; height: 0;" id="updateScorInServer" name="score">
+            </form>
+            <jumper id="jumpToGame" style="margin-bottom: 0px"></jumper>
+            <div id="snakeBoard">
+                <button id="playButton" onclick="StartGame()">
+                    <div class="arrow-right"></div>
+                </button>
+            </div>
+            <h6 id="textScore">Score: 0</h6>
+            <jumper id="jumpToLeaderboard" style="margin-bottom: 0px"></jumper>
+            <div id="leaderboardGrid">
+                <div id="leaderboardTable">
+                    <h1>Leaderboard</h1>
+                    <div>
+                        <name><%=dataToUse.high[0].userName%></name>
+                        <score><%=dataToUse.high[0].score%></score>
+                    </div>
+                    <div>
+                        <name><%=dataToUse.high[1].userName%></name>
+                        <score><%=dataToUse.high[1].score%></score>
+                    </div>
+                    <div>
+                        <name><%=dataToUse.high[2].userName%></name>
+                        <score><%=dataToUse.high[2].score%></score>
+                    </div>
+                    <div>
+                        <name><%=dataToUse.high[3].userName%></name>
+                        <score><%=dataToUse.high[3].score%></score>
+                    </div>
+                    <div>
+                        <name><%=dataToUse.high[4].userName%></name>
+                        <score><%=dataToUse.high[4].score%></score>
+                    </div>
+                </div>
+                <div id="myRecord">
+                    <h2>My record</h2>
+                    <p><%=dataToUse.score%></p>
+                </div>
+            </div>
+            <jumper id="jumpInfo" style="margin-bottom: 60px;"></jumper>
+            <h1 id="rulesTitle">Rules</h1>
+            <div class="line"></div>
+            <div id="info">
+                <p> &emsp; The idea behind SuperSnake is to get as many points
+                    as possible, the length of the snake in one level or
+                    the number of levels are irrelevant here.
+                </p>
+                <div id="firstRule">Score: 999</div>
+                <p> &emsp; Collect stars to grow your snake. At each level, when
+                    you reach the length of 17, a special star will appear that can
+                    teleport you to the next level. But before you go to the next
+                    level, it's worth noting that super stars will appear on each level
+                    when your snake grows very large. Those stars give you double the
+                    points of regular stars. Even more, regular stars are more valuable
+                    in higher levels.
+                </p>
+                <div id="secondRule">
+                    <img src="images/goldenStar.png" class="fitIcon" alt="golden star">
+                    <img src="images/levelStar.png" alt="golden star">
+                </div>
+                <p>
+                    &emsp; Be careful! Every 5 levels the snake speed will increase and
+                    it will be harder and harder to get the stars. And also make sure 
+                    your snake doesn't touches any of the walls you encounter.
+                </p>
+                <div id="thirdRule">
+                    <div class="triangle" style="grid-column: 1;"></div>
+                    <div class="triangle" style="grid-column: 2;"></div>
+                    <div class="triangle" style="grid-column: 3;"></div>
+                </div>
+                <p>
+                    &emsp; Before you go, be careful at the walls at each start of the level.
+                    They can really take you by surprise sometimes. Have fun!
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
