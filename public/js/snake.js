@@ -423,9 +423,8 @@ function loadLevelSnake(level, nrLevel)
         {
             var playButton = document.getElementById("playButton");
             playButton.style.visibility = 'visible';
+            SentNewScore();
         }
-
-        SentNewScore();
     }
 
     function move()
